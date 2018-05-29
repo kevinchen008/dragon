@@ -1,0 +1,45 @@
+buildscript {
+    ext {
+        dependencyManagementPluginVersion = '1.0.0.RELEASE'
+    }
+    repositories {
+        maven {url "http://maven.aliyun.com/nexus/content/groups/public"}
+        jcenter()
+        maven { url "https://repo.spring.io/snapshot" }
+        maven { url "https://repo.spring.io/milestone" }
+    }
+    dependencies {
+        classpath("io.spring.gradle:dependency-management-plugin:${dependencyManagementPluginVersion}")
+    }
+}
+
+allprojects {
+    group 'com.gmtok'
+    version '1.0-SNAPSHOT'
+
+    apply plugin: 'java'
+    apply plugin: 'idea'
+}
+
+subprojects {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    apply plugin: 'io.spring.dependency-management'
+
+    dependencyManagement {
+        imports {
+            mavenBom 'io.spring.platform:platform-bom:Brussels-SR7'
+            mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Edgware.SR2'
+        }
+    }
+
+    dependencies {
+        compile('org.springframework.boot:spring-boot-starter-test')
+        testCompile group: 'com.github.tomakehurst', name: 'wiremock', version: '2.15.0'
+        compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.7'
+        compile group: 'org.projectlombok', name: 'lombok', version: '1.16.20'
+        compile 'mysql:mysql-connector-java'
+    }
+
+}
