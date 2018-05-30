@@ -1,19 +1,19 @@
-package ${package.Service};
+package com.gmtok.dragon.base.service;
 
-import ${package.Entity}.${entity};
-import ${superServiceClassPackage};
+import com.baomidou.mybatisplus.service.IService;
 import com.github.pagehelper.PageInfo;
+import com.gmtok.dargon.base.entity.SysRole;
 import com.goblin.common.PagingRequest;
 
 /**
  * <p>
- * $!{table.comment} 服务类
+ *  服务类
  * </p>
  *
- * @author ${author}
- * @since ${date}
+ * @author Kevin.Chen
+ * @since 2018-05-30
  */
-public interface ${table.serviceName} extends ${superServiceClass}<${entity}> {
+public interface SysRoleService extends IService<SysRole> {
     
     /**
      * 默认分页(PageHelper分页)
@@ -52,7 +52,7 @@ public interface ${table.serviceName} extends ${superServiceClass}<${entity}> {
      * @param pagingRequest
      * @return PageInfo
      */
-    PageInfo<${entity}> listPage( PagingRequest pagingRequest );
+    PageInfo<SysRole> listPage(PagingRequest pagingRequest);
     
     
     
