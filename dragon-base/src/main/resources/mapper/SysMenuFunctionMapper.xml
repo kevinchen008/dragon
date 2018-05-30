@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gmtok.dragon.base.mapper.SysMenuFunctionMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.gmtok.dragon.base.entity.SysMenuFunction">
+        <id column="id" property="id" />
+        <result column="function_name" property="functionName" />
+        <result column="menu_id" property="menuId" />
+        <result column="function_path" property="functionPath" />
+        <result column="order_index" property="orderIndex" />
+        <result column="status" property="status" />
+        <result column="remark" property="remark" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id AS id, function_name AS functionName, menu_id AS menuId, function_path AS functionPath, order_index AS orderIndex, status AS status, remark AS remark
+    </sql>
+
+</mapper>

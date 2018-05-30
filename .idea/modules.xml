@@ -7,7 +7,6 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/dragon-base/dragon-base_main.iml" filepath="$PROJECT_DIR$/.idea/modules/dragon-base/dragon-base_main.iml" group="dragon-base" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/dragon-base/dragon-base_test.iml" filepath="$PROJECT_DIR$/.idea/modules/dragon-base/dragon-base_test.iml" group="dragon-base" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/dragon-generator/dragon-generator.iml" filepath="$PROJECT_DIR$/.idea/modules/dragon-generator/dragon-generator.iml" group="dragon-generator" />
-      <module fileurl="file://$PROJECT_DIR$/dragon-generator/dragon-generator.iml" filepath="$PROJECT_DIR$/dragon-generator/dragon-generator.iml" group="dragon-generator" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/dragon-generator_main.iml" filepath="$PROJECT_DIR$/.idea/modules/dragon-generator_main.iml" group="dragon-generator" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/dragon-generator_test.iml" filepath="$PROJECT_DIR$/.idea/modules/dragon-generator_test.iml" group="dragon-generator" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/dragon_main.iml" filepath="$PROJECT_DIR$/.idea/modules/dragon_main.iml" group="dragon" />

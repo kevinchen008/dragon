@@ -3,11 +3,13 @@ package ${package.Controller};
 import org.springframework.http.ResponseEntity;
 import ${package.Entity}.${entity};
 import ${package.Service}.${table.serviceName};
-        
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.github.pagehelper.PageInfo;
-import com.goblin.common.PagingRequest;
+import com.gmtok.dragon.base.utils.PagingRequest;
 
 #if(${restControllerStyle})
 #else
@@ -54,18 +56,18 @@ public class ${table.controllerName} {
     
     @GetMapping("{id}")
     public ResponseEntity< ${entity} > get ( @PathVariable String id ){
-        return ResponseEntity.ok().setResponseContent(i${entity}Service.selectById( id ));
+        return ResponseEntity.ok().body(i${entity}Service.selectById( id ));
     }
 
     @GetMapping
     public ResponseEntity< PageInfo<${entity}> > list ( PagingRequest pagingRequest ){
-        return ResponseEntity.ok().setResponseContent(i${entity}Service.listPage( pagingRequest ));
+        return ResponseEntity.ok().body(i${entity}Service.listPage( pagingRequest ));
     }
 
     @PostMapping
     public ResponseEntity insert ( @RequestBody ${entity} request${entity} ){
         if ( !i${entity}Service.insert( request${entity} ) ){
-            return ResponseEntity.badRequest("保存失败");    
+            return ResponseEntity.badRequest().body("保存失败");
         }
         return ResponseEntity.ok("保存成功");
     }
@@ -74,7 +76,7 @@ public class ${table.controllerName} {
     public ResponseEntity update ( @PathVariable String id,
                                               @RequestBody ${entity} request${entity} ){
         if ( ! i${entity}Service.updateById( request${entity}.setId(id)) ){
-            return ResponseEntity.badRequest("更新失败");    
+            return ResponseEntity.badRequest().body("更新失败");
         }
         return ResponseEntity.ok("更新成功");
     }
@@ -82,7 +84,7 @@ public class ${table.controllerName} {
     @DeleteMapping("{id}")
     public ResponseEntity delete ( @PathVariable String id ){
         if ( ! i${entity}Service.deleteById(id) ){
-            return ResponseEntity.badRequest("删除失败");    
+            return ResponseEntity.badRequest().body("删除失败");
         }
         return ResponseEntity.ok("删除成功");
     }

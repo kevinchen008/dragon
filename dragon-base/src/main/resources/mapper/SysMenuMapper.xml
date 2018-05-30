@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gmtok.dragon.base.mapper.SysMenuMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.gmtok.dragon.base.entity.SysMenu">
+        <id column="id" property="id" />
+        <result column="menu_name" property="menuName" />
+        <result column="menu_path" property="menuPath" />
+        <result column="menu_icon" property="menuIcon" />
+        <result column="order_index" property="orderIndex" />
+        <result column="menu_type" property="menuType" />
+        <result column="status" property="status" />
+        <result column="remark" property="remark" />
+        <result column="pid" property="pid" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id AS id, menu_name AS menuName, menu_path AS menuPath, menu_icon AS menuIcon, order_index AS orderIndex, menu_type AS menuType, status AS status, remark AS remark, pid AS pid
+    </sql>
+
+</mapper>

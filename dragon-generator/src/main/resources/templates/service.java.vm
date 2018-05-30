@@ -3,7 +3,7 @@ package ${package.Service};
 import ${package.Entity}.${entity};
 import ${superServiceClassPackage};
 import com.github.pagehelper.PageInfo;
-import com.goblin.common.PagingRequest;
+import com.gmtok.dragon.base.utils.PagingRequest;
 
 /**
  * <p>

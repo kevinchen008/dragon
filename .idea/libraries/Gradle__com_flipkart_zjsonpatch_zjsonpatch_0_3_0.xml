@@ -3,11 +3,13 @@
     <CLASSES>
       <root url="jar://F:/../../env/gradle/caches/modules-2/files-2.1/com.flipkart.zjsonpatch/zjsonpatch/0.3.0/614d0d42a9612485f66f83dace4e18251f9e7255/zjsonpatch-0.3.0.jar!/" />
       <root url="jar://F:/EnvVar/gradle/repository/caches/modules-2/files-2.1/com.flipkart.zjsonpatch/zjsonpatch/0.3.0/614d0d42a9612485f66f83dace4e18251f9e7255/zjsonpatch-0.3.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../env/gradle/caches/modules-2/files-2.1/com.flipkart.zjsonpatch/zjsonpatch/0.3.0/614d0d42a9612485f66f83dace4e18251f9e7255/zjsonpatch-0.3.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="jar://F:/../../env/gradle/caches/modules-2/files-2.1/com.flipkart.zjsonpatch/zjsonpatch/0.3.0/dcbcec347f0c4d684296272a84eb55eabd5474d/zjsonpatch-0.3.0-sources.jar!/" />
       <root url="jar://F:/EnvVar/gradle/repository/caches/modules-2/files-2.1/com.flipkart.zjsonpatch/zjsonpatch/0.3.0/dcbcec347f0c4d684296272a84eb55eabd5474d/zjsonpatch-0.3.0-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../env/gradle/caches/modules-2/files-2.1/com.flipkart.zjsonpatch/zjsonpatch/0.3.0/dcbcec347f0c4d684296272a84eb55eabd5474d/zjsonpatch-0.3.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.goblin.common.PagingRequest;
+import com.gmtok.dragon.base.utils.PagingRequest;
 
 
 /**
