@@ -34,7 +34,7 @@ public class MpGenerator {
         AutoGenerator mpg = new AutoGenerator().setGlobalConfig(
                 // 全局配置
                 new GlobalConfig()
-                        .setOutputDir("D:\\work\\workspaces\\workspace\\GIT\\dragon\\dragon-base\\src\\main\\java\\com\\gmtok\\dragon\\base\\gen" )//输出目录
+                        .setOutputDir("F:\\workspace\\dragon\\dragon-base\\src\\main\\java\\com\\gmtok\\dragon\\base\\gen" )//输出目录
                         .setFileOverride( true )// 是否覆盖文件
                         .setActiveRecord( true )// 开启 activeRecord 模式
                         .setEnableCache( false )// XML 二级缓存
@@ -45,7 +45,7 @@ public class MpGenerator {
                         // .setMapperName("%sDao")
                         // .setXmlName("%sDao")
                         .setServiceName( "%sService" )
-                // .setServiceImplName("%sServiceDiy")
+                        .setServiceImplName("i%sService")
                 // .setControllerName("%sAction")
         ).setDataSource(
                 // 数据源配置
@@ -60,8 +60,8 @@ public class MpGenerator {
                         } )
                         .setDriverName( "com.mysql.jdbc.Driver" )
                         .setUsername( "root" )
-                        .setPassword( "123456" )
-                        .setUrl( "jdbc:mysql://127.0.0.1:3306/agent?characterEncoding=utf8" )
+                        .setPassword( "root" )
+                        .setUrl( "jdbc:mysql://172.19.50.150:3306/mcc?characterEncoding=utf8" )
         ).setStrategy(
                 // 策略配置
                 new StrategyConfig()
@@ -96,17 +96,18 @@ public class MpGenerator {
                         // Boolean类型字段是否移除is前缀处理
                         .setEntityBooleanColumnRemoveIsPrefix( true )
                         .setRestControllerStyle( true )
-                        .setControllerMappingHyphenStyle( true )
+                        .setControllerMappingHyphenStyle( false )
         ).setPackageInfo(
                 // 包配置
                 new PackageConfig()
                         // .setModuleName( "test" )
-                        .setParent( "com.gmtok.dargon.base" )// 自定义包路径
+                        .setParent( "com.gmtok.dragon.base" )// 自定义包路径
                         .setController( "controller" )// 这里是控制器包名，默认 web
                         .setEntity( "entity" )
                         .setService("service")
                         .setServiceImpl("service.impl")
-        ).setCfg(
+        )
+             /*   .setCfg(
                 // 注入自定义配置，可以在 VM 中使用 cfg.abc 设置的值
                 new InjectionConfig() {
                     @Override
@@ -122,7 +123,8 @@ public class MpGenerator {
                         return "/develop/code/xml/" + tableInfo.getEntityName() + ".xml";
                     }
                 } ) )
-        ).setTemplate(
+        )*/
+                .setTemplate(
                 // 关闭默认 xml 生成，调整生成 至 根目录
                 new TemplateConfig()
                         // .setXml( null )

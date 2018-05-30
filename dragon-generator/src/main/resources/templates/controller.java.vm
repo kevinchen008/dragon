@@ -36,8 +36,11 @@ public class ${table.controllerName} extends ${superControllerClass} {
 #else
 public class ${table.controllerName} {
 #end
+
+    private final Logger logger = LoggerFactory.getLogger(${table.controllerName}.class);
+
     @Autowired
-    private ${table.serviceName} ${serviceVariableName};
+    private ${table.serviceName} i${entity}Service;
 
     /*
       #foreach($field in ${table.fields})
@@ -50,35 +53,35 @@ public class ${table.controllerName} {
     
     
     @GetMapping("{id}")
-    public ResponseEntity< ${entity} > get ( @PathVariable ${primaryKeyTypeString} id ){
-        return ResponseEntity.ok().setResponseContent(${serviceVariableName}.selectById( id ));
+    public ResponseEntity< ${entity} > get ( @PathVariable String id ){
+        return ResponseEntity.ok().setResponseContent(i${entity}Service.selectById( id ));
     }
 
     @GetMapping
     public ResponseEntity< PageInfo<${entity}> > list ( PagingRequest pagingRequest ){
-        return ResponseEntity.ok().setResponseContent(${serviceVariableName}.listPage( pagingRequest ));
+        return ResponseEntity.ok().setResponseContent(i${entity}Service.listPage( pagingRequest ));
     }
 
     @PostMapping
-    public ResponseEntity insert ( @RequestBody ${entity} ${entityVariableName} ){
-        if ( ! ${serviceVariableName}.insert( ${entityVariableName}) ){
+    public ResponseEntity insert ( @RequestBody ${entity} request${entity} ){
+        if ( !i${entity}Service.insert( request${entity} ) ){
             return ResponseEntity.badRequest("保存失败");    
         }
         return ResponseEntity.ok("保存成功");
     }
 
     @PutMapping("{id}")
-    public ResponseEntity update ( @PathVariable ${primaryKeyTypeString} id,
-                                              @RequestBody ${entity} ${entityVariableName} ){
-        if ( ! ${serviceVariableName}.updateById( ${entityVariableName}.setId(id)) ){
+    public ResponseEntity update ( @PathVariable String id,
+                                              @RequestBody ${entity} request${entity} ){
+        if ( ! i${entity}Service.updateById( request${entity}.setId(id)) ){
             return ResponseEntity.badRequest("更新失败");    
         }
         return ResponseEntity.ok("更新成功");
     }
 
     @DeleteMapping("{id}")
-    public ResponseEntity delete ( @PathVariable ${primaryKeyTypeString} id ){
-        if ( ! ${serviceVariableName}.deleteById(id) ){
+    public ResponseEntity delete ( @PathVariable String id ){
+        if ( ! i${entity}Service.deleteById(id) ){
             return ResponseEntity.badRequest("删除失败");    
         }
         return ResponseEntity.ok("删除成功");
